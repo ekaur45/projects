@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/style.css" rel="stylesheet" />
+    <link href="Content/menustyle.css" rel="stylesheet" />
+</head>
+<body>
+    <nav gog-menu="" class="menu
+            menu-prices-in-usd
+            menu--windows
+            menu-curr-symbol-before
+            menu-language-en-us">
+        <div class="menu__container">
+            <a href="/" class="menu__logo">
+            <svg viewBox="0 0 32 32" class="menu__logo-icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo-gog"></use></svg></a><div class="menu-main hide-in-lite-mode">
+                <div class="menu-item has-submenu menu-item--animated hide-in-lite-mode js-menu-store" ng-controller="menuGamesCtrl as games" ng-mouseenter="menu.showWithDelay($event, 'store')" ng-mouseleave="menu.hide($event, 'store')" hook-test="menuStore">
+                    <a class="menu-link menu-uppercase js-menu-link" href="/games" ng-touchstart="$event.preventDefault(); menu.toggle($event, 'store')" hook-test="menuStoreButton">Store<svg viewBox="0 0 32 32" class="menu-link__dropdown-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-down2"></use></svg></a><span class="menu-triangle"></span><div class="menu-submenu menu-store__submenu js-menu-sloped-submenu" ng-mouseenter="menu.cancelTimeout('store')" ng-class="{ 'menu-store__submenu--category-expanded': games.isLayerExpanded }">
+                        <div class="menu-section-layer menu-section-layer--" ng-class="{ 'is-visible': games.isLayerExpanded }" ng-mouseover="games.holdCategory()"><!-- ngIf: games.selectedCategory.products[0].id --><div class="menu-section-layer__custom-bg  ng-hide" ng-show="games.selectedCategory.isSpecial &amp;&amp; !games.selectedCategory.customisation.isSingle" ng-style="{'background-image': 'url('+games.selectedCategory.customisation.backgroundImage+')', 'background-color': games.selectedCategory.customisation.categoryColor}" style="background-image: url(&quot;&quot;);"><div class="menu-inside-category"><p class="menu-inside-category__title" ng-bind="games.selectedCategory.categoryTitle"></p><div class="menu-products cf"><div class="menu-inside-category__column" ng-class="{'menu-inside-category__column--expendable': games.selectedCategory.hideColumn == 1}"><!-- ngRepeat: gamesProduct in games.selectedCategory.columns[0] --></div><div class="menu-inside-category__column" ng-class="{'menu-inside-category__column--expendable': games.selectedCategory.hideColumn == 2}"><!-- ngRepeat: gamesProduct in games.selectedCategory.columns[1] --></div><div class="menu-inside-category__column" ng-class="{'menu-inside-category__column--expendable': games.selectedCategory.hideColumn == 3}"><!-- ngRepeat: gamesProduct in games.selectedCategory.columns[2] --></div></div><a class="menu-btn menu-btn--full menu-category-btn" ng-href="" ng-hide="games.selectedCategory.name == 'all'" ng-bind="games.selectedCategory.categoryButton" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'All  Games '}"></a></div></div><div class="menu-inside-category" ng-show="!games.selectedCategory.isSpecial" hook-test="storeSectionMenu"><p class="menu-inside-category__title" ng-bind="games.selectedCategory.categoryTitle"></p><div class="menu-products cf"><div class="menu-inside-category__column" ng-class="{'menu-inside-category__column--expendable': games.selectedCategory.hideColumn == 1}"><!-- ngRepeat: gamesProduct in games.selectedCategory.columns[0] --></div><div class="menu-inside-category__column" ng-class="{'menu-inside-category__column--expendable': games.selectedCategory.hideColumn == 2}"><!-- ngRepeat: gamesProduct in games.selectedCategory.columns[1] --></div><div class="menu-inside-category__column" ng-class="{'menu-inside-category__column--expendable': games.selectedCategory.hideColumn == 3}"><!-- ngRepeat: gamesProduct in games.selectedCategory.columns[2] --></div></div><a class="menu-btn menu-btn--full menu-category-btn" ng-href="" ng-hide="games.selectedCategory.name == 'all'" ng-bind="games.selectedCategory.categoryButton" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'All  Games '}"></a></div></div><!-- ngRepeat: customCategory in games.customCategories track by customCategory.name --><div class="menu-submenu-item menu-submenu-item--custom" ng-mouseover="games.selectCategory(customCategory.name)" ng-class="{'is-active': games.selectedCategory.name == customCategory.name}" ng-repeat="customCategory in games.customCategories track by customCategory.name">
+                            <a class="menu-submenu-link menu-custom-category-link menu-custom-category-link js-menu-category-link" ng-style="{'color': customCategory.customisation.categoryColor }" ng-href="/game/pillars_of_eternity_ii_deadfire" ng-touchstart="$event.preventDefault(); games.selectCategory(customCategory.name)" href="/game/pillars_of_eternity_ii_deadfire" style="color: rgb(0, 170, 187);">
+                                Pillars of Eternity II: Deadfire
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon menu-submenu-icon--custom" ng-style="{'fill': customCategory.customisation.categoryColor}" style="fill: rgb(0, 170, 187);"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon menu-submenu-icon--custom" ng-style="{'fill': customCategory.customisation.categoryColor}" style="fill: rgb(0, 170, 187);"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><!-- end ngRepeat: customCategory in games.customCategories track by customCategory.name --><div class="menu-submenu-item menu-submenu-item--custom" ng-mouseover="games.selectCategory(customCategory.name)" ng-class="{'is-active': games.selectedCategory.name == customCategory.name}" ng-repeat="customCategory in games.customCategories track by customCategory.name">
+                            <a class="menu-submenu-link menu-custom-category-link menu-custom-category-link js-menu-category-link" ng-style="{'color': customCategory.customisation.categoryColor }" ng-href="/game/divinity_original_sin_2" ng-touchstart="$event.preventDefault(); games.selectCategory(customCategory.name)" href="/game/divinity_original_sin_2" style="color: rgb(166, 8, 18);">
+                                Divinity: Original Sin 2
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon menu-submenu-icon--custom" ng-style="{'fill': customCategory.customisation.categoryColor}" style="fill: rgb(166, 8, 18);"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon menu-submenu-icon--custom" ng-style="{'fill': customCategory.customisation.categoryColor}" style="fill: rgb(166, 8, 18);"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><!-- end ngRepeat: customCategory in games.customCategories track by customCategory.name --><div class="menu-submenu-separator" ng-show="games.customCategoriesCount > 0"></div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('new-releases')" ng-class="{'is-active': games.selectedCategory.name == 'new-releases'}" hook-test="storeMenunew-releases">
+                            <a class="menu-submenu-link  menu-submenu-link--featured js-menu-category-link" href="/games?sort=date&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'new-releases STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('new-releases')" hook-test="storeMenunew-releasesButton">
+                                New releases
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('bestsellers')" ng-class="{'is-active': games.selectedCategory.name == 'bestsellers'}" hook-test="storeMenubestsellers">
+                            <a class="menu-submenu-link  menu-submenu-link--featured js-menu-category-link" href="/games?sort=popularity&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'bestsellers STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('bestsellers')" hook-test="storeMenubestsellersButton">
+                                Bestsellers
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('on-sale-now')" ng-class="{'is-active': games.selectedCategory.name == 'on-sale-now'}" hook-test="storeMenuon-sale-now">
+                            <a class="menu-submenu-link  menu-submenu-link--featured js-menu-category-link" href="/games?price=discounted&amp;sort=popularity&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'on-sale-now STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('on-sale-now')" hook-test="storeMenuon-sale-nowButton">
+                                On sale now
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><div class="menu-submenu-separator"></div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('action')" ng-class="{'is-active': games.selectedCategory.name == 'action'}" hook-test="storeMenuaction">
+                            <a class="menu-submenu-link   js-menu-category-link" href="/games/action?sort=popularity&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'action STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('action')" hook-test="storeMenuactionButton">
+                                Action
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('adventure')" ng-class="{'is-active': games.selectedCategory.name == 'adventure'}" hook-test="storeMenuadventure">
+                            <a class="menu-submenu-link   js-menu-category-link" href="/games/adventure?sort=popularity&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'adventure STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('adventure')" hook-test="storeMenuadventureButton">
+                                Adventure
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('indie')" ng-class="{'is-active': games.selectedCategory.name == 'indie'}" hook-test="storeMenuindie">
+                            <a class="menu-submenu-link   js-menu-category-link" href="/games/indie?sort=popularity&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'indie STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('indie')" hook-test="storeMenuindieButton">
+                                Indie
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('role-playing')" ng-class="{'is-active': games.selectedCategory.name == 'role-playing'}" hook-test="storeMenurole-playing">
+                            <a class="menu-submenu-link   js-menu-category-link" href="/games/role-playing?sort=popularity&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'role-playing STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('role-playing')" hook-test="storeMenurole-playingButton">
+                                RPG
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('shooter')" ng-class="{'is-active': games.selectedCategory.name == 'shooter'}" hook-test="storeMenushooter">
+                            <a class="menu-submenu-link   js-menu-category-link" href="/games/shooter?sort=popularity&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'shooter STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('shooter')" hook-test="storeMenushooterButton">
+                                Shooters
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('simulation')" ng-class="{'is-active': games.selectedCategory.name == 'simulation'}" hook-test="storeMenusimulation">
+                            <a class="menu-submenu-link   js-menu-category-link" href="/games/simulation?sort=popularity&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'simulation STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('simulation')" hook-test="storeMenusimulationButton">
+                                Simulation
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('sports')" ng-class="{'is-active': games.selectedCategory.name == 'sports'}" hook-test="storeMenusports">
+                            <a class="menu-submenu-link   js-menu-category-link" href="/games?sort=popularity&amp;search=sports | racing&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'sports STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('sports')" hook-test="storeMenusportsButton">
+                                Sports &amp; Racing
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('strategy')" ng-class="{'is-active': games.selectedCategory.name == 'strategy'}" hook-test="storeMenustrategy">
+                            <a class="menu-submenu-link   js-menu-category-link" href="/games/strategy?sort=popularity&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'strategy STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('strategy')" hook-test="storeMenustrategyButton">
+                                Strategy
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('movies')" ng-class="{'is-active': games.selectedCategory.name == 'movies'}" hook-test="storeMenumovies">
+                            <a class="menu-submenu-link   js-menu-category-link" href="/movies?sort=popularity&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'movies STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('movies')" hook-test="storeMenumoviesButton">
+                                Movies for gamers
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div><div class="menu-submenu-separator"></div><div class="menu-submenu-item " ng-mouseover="games.selectCategory('all')" ng-class="{'is-active': games.selectedCategory.name == 'all'}" hook-test="storeMenuall">
+                            <a class="menu-submenu-link   js-menu-category-link" href="/games?sort=popularity&amp;page=1" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'all STORE'}" ng-touchstart="$event.preventDefault(); games.selectCategory('all')" hook-test="storeMenuallButton">
+                                Browse all games
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div><div class="menu-item menu-item--animated has-submenu hide-in-lite-mode hide-in-normal-mode menu-item--grouped js-menu-grouped" ng-mouseenter="menu.showWithDelay($event, 'grouped')" ng-mouseleave="menu.hide($event, 'grouped')" hook-test="menuMore">
+                    <a class="menu-link menu-uppercase" ng-touchstart="$event.preventDefault(); menu.toggle($event, 'grouped')">
+                        More
+                        <svg viewBox="0 0 32 32" class="menu-link__dropdown-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-down2"></use></svg>
+                    </a><span class="menu-triangle"></span><div class="menu-submenu js-menu"><div class="menu-submenu-item  menu-submenu-item--hover"><a href="/about_gog" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'GOG.com ABOUT'}">GOG.com</a></div><div class="menu-submenu-item  menu-submenu-item--hover"><a href="/galaxy" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'GOG Galaxy App ABOUT'}">GOG Galaxy</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="/work" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'We are hiring ABOUT'}">Join the team</a></div><div class="menu-submenu-separator"></div><div class="menu-submenu-item  menu-submenu-item--hover"><a href="https://support.gog.com/hc/en-us/categories/201400969" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Game Technical Issues SUPPORT'}">Game technical issues</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="https://support.gog.com/hc/en-us/categories/201552965" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Orders and payments SUPPORT'}">Orders and payments</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="https://support.gog.com/hc/en-us/categories/201552985" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Account and Website SUPPORT'}">Account and website</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="https://support.gog.com/hc/en-us/categories/201553005" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Downloads SUPPORT'}">Downloads</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="https://support.gog.com/hc/en-us/categories/201553025" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'GOG Galaxy SUPPORT'}">GOG Galaxy</a></div><div class="menu-submenu-separator"></div><div class="menu-submenu-item  menu-submenu-item--hover"><a href="/forum" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Forums COMMUNITY'}">Forums</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="/wishlist" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Community Wishlist COMMUNITY'}">Community wishlist</a></div><div class="menu-submenu-separator"></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="https://www.facebook.com/gogcom" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Facebook COMMUNITY'}">Facebook</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="https://twitter.com/GOGcom" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Twitter COMMUNITY'}">Twitter</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="https://www.twitch.tv/gogcom" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Twitch COMMUNITY'}">Twitch</a></div></div>
+                </div><div class="menu-item menu-item--animated has-submenu hide-in-lite-mode hide-in-grouped-mode js-menu-about" ng-mouseenter="menu.showWithDelay($event, 'about')" ng-mouseleave="menu.hide($event, 'about')" hook-test="menuAbout">
+                    <a href="/about_gog" class="menu-link menu-uppercase" ng-touchstart="$event.preventDefault(); menu.toggle($event, 'about')">
+                        About
+                        <svg viewBox="0 0 32 32" class="menu-link__dropdown-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-down2"></use></svg>
+                    </a><span class="menu-triangle"></span><div class="menu-submenu js-menu"><div class="menu-submenu-item  menu-submenu-item--hover"><a href="/about_gog" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'GOG.com ABOUT'}">GOG.com</a></div><div class="menu-submenu-item  menu-submenu-item--hover"><a href="/galaxy" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'GOG Galaxy App ABOUT'}">GOG Galaxy</a></div><div class="menu-submenu-separator"></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="/work" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'We are hiring ABOUT'}">Join the team</a></div></div>
+                </div><div class="menu-item menu-item--animated has-submenu hide-in-lite-mode hide-in-grouped-mode js-menu-community" ng-mouseenter="menu.showWithDelay($event, 'community')" ng-mouseleave="menu.hide($event, 'community')" hook-test="menuCommunity"><a class="menu-link menu-uppercase" href="/forum" ng-touchstart="$event.preventDefault(); menu.toggle($event, 'community')">Community<svg viewBox="0 0 32 32" class="menu-link__dropdown-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-down2"></use></svg></a><span class="menu-triangle"></span><div class="menu-submenu js-menu"><div class="menu-submenu-item  menu-submenu-item--hover"><a class="menu-submenu-link" href="/forum" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'All forums COMMUNITY'}">All forums</a></div><div class="menu-submenu-item  menu-submenu-item--hover"><a class="menu-submenu-link" href="/forum/general" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'General discussion forums COMMUNITY'}">General discussion forum</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a class="menu-submenu-link" href="/wishlist" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Community Wishlist COMMUNITY'}">Community wishlist</a></div><div class="menu-submenu-separator"></div><div class="menu-submenu-item menu-submenu-item--hover"><a class="menu-submenu-link" href="https://www.facebook.com/gogcom" target="_blank" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Facebook COMMUNITY'}">Facebook</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a class="menu-submenu-link" href="https://twitter.com/GOGcom" target="_blank" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Twitter COMMUNITY'}">Twitter</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a class="menu-submenu-link" href="https://www.twitch.tv/gogcom" target="_blank" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Twitch COMMUNITY'}">Twitch</a></div></div></div><div class="menu-item menu-item--animated has-submenu hide-in-lite-mode hide-in-grouped-mode js-menu-support" ng-mouseenter="menu.showWithDelay($event, 'support')" ng-mouseleave="menu.hide($event, 'support')" hook-test="menuSupport">
+                    <a href="https://support.gog.com/hc/en-us" class="menu-link menu-uppercase" ng-touchstart="$event.preventDefault(); menu.toggle($event, 'support')">
+                        Support
+                        <svg viewBox="0 0 32 32" class="menu-link__dropdown-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-down2"></use></svg>
+                    </a><span class="menu-triangle"></span><div class="menu-submenu js-menu"><div class="menu-submenu-item  menu-submenu-item--hover"><a href="https://support.gog.com/hc/en-us/categories/201400969" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Game Technical Issues SUPPORT'}">Game technical issues</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="https://support.gog.com/hc/en-us/categories/201552965" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Orders and payments SUPPORT'}">Orders and payments</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="https://support.gog.com/hc/en-us/categories/201552985" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Account and Website SUPPORT'}">Account and website</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="https://support.gog.com/hc/en-us/categories/201553005" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Downloads SUPPORT'}">Downloads</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="https://support.gog.com/hc/en-us/categories/201553025" class="menu-submenu-link" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'GOG Galaxy SUPPORT'}">GOG Galaxy</a></div></div>
+                </div><div class="menu-item menu-item--animated has-submenu menu-anonymous js-menu-anonymous" ng-controller="menuAnonymousCtrl as anonymous" ng-show="anonymous.isResponseFetched &amp;&amp; !anonymous.isUserLoggedIn" ng-mouseenter="menu.show($event, 'anonymous')" ng-mouseleave="menu.hide($event, 'anonymous')" hook-test="menuAnonymous">
+                    <a class="menu-link menu-link--anonymous menu-uppercase hide-on-touch-device" ng-click="anonymous.openLogin()" hook-test="menuLogin"><span gog-track-event="{eventCategory: 'topBar', eventAction:'login', eventLabel:'Login' }">Sign in</span><svg viewBox="0 0 32 32" class="menu-link__dropdown-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-down2"></use></svg><span class="menu-triangle menu-triangle--others menu-triangle--anonymous"></span></a><a class="menu-link menu-link--anonymous menu-uppercase hide-on-non-touch-device" hook-test="menuLogin" ng-touchstart="$event.preventDefault(); menu.toggle($event, 'anonymous')"><span gog-track-event="{eventCategory: 'topBar', eventAction:'login', eventLabel:'Login' }">Sign in</span><svg viewBox="0 0 32 32" class="menu-link__dropdown-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-down2"></use></svg><span class="menu-triangle menu-triangle--others menu-triangle--anonymous"></span></a><div class="menu-submenu menu-anonymous__submenu" ng-click="menu.stopPropagation($event)" ng-mouseenter="menu.cancelTimeout('anonymous')">
+                        <div class="menu-header menu-anonymous-header">
+                            <a class="menu-btn menu-btn--gray menu-anonymous-header__btn menu-anonymous-header__btn--create-account menu-uppercase" ng-click="anonymous.openRegistration()" hook-test="menuSignUp" gog-track-event="{eventCategory: 'topBar', eventAction:'register', eventLabel:'Register' }">
+                                Create account
+                            </a><span class="menu-anonymous-header__separator"></span><a class="menu-btn menu-anonymous-header__btn menu-anonymous-header__btn--sign-in menu-uppercase" ng-click="anonymous.openLogin()" hook-test="menuLogin" gog-track-event="{eventCategory: 'topBar', eventAction:'login', eventLabel:'Login' }">
+                                Sign in
+                            </a>
+                        </div><figure class="menu-anonymous__shelf"></figure><p class="menu-anonymous__about">
+                            <b>
+                                GOG.com is a digital distribution platform – an online store with a curated selection of games, an optional gaming client giving you freedom of choice, and a vivid community of gamers.
+                            </b>
+                            All of this born from a deeply rooted love for games,&ensp;utmost care about customers, and a belief that you should own the things you buy.
+                        </p><p class="menu-anonymous__features-header">
+                            <span class="menu-anonymous__features-header-in">
+                                What is GOG.com about?
+                            </span>
+                        </p><div class="menu-features-slider" gog-menu-features-slider="" ng-mouseenter="slider.stop()" ng-mouseleave="slider.play()"><span class="menu-features-slider__nav menu-features-slider__nav--left" ng-click="slider.triggerPrevSlide()"><svg viewBox="0 0 32 32" class="menu-features-slider__nav-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-fat-arrow-left"></use></svg></span><span class="menu-features-slider__nav menu-features-slider__nav--right" ng-click="slider.triggerNextSlide()"><svg viewBox="0 0 32 32" class="menu-features-slider__nav-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-fat-arrow-right"></use></svg></span><div class="menu-features-slider__slide js-slide is-active"><div class="menu-features-slider__slide-text"><svg viewBox="0 0 32 32" class="menu-features-slider__slide-icon menu-features-slider__slide-icon--slide1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star"></use></svg><b class="menu-features-slider__slide-highlight menu-features-slider__slide-highlight--slide1">Hand-picking the best in gaming.</b> A selection of great games, from modern hits to all-time classics, that you really shouldn’t miss.</div></div><div class="menu-features-slider__slide js-slide"><div class="menu-features-slider__slide-text"><svg viewBox="0 0 32 32" class="menu-features-slider__slide-icon menu-features-slider__slide-icon--slide2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"></use></svg><b class="menu-features-slider__slide-highlight menu-features-slider__slide-highlight--slide2">Customer-first approach.</b> Delivering user-friendly support enriched with additional customer benefits.</div></div><div class="menu-features-slider__slide js-slide"><div class="menu-features-slider__slide-text"><svg viewBox="0 0 32 32" class="menu-features-slider__slide-icon menu-features-slider__slide-icon--slide3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-hand-picked"></use></svg><b class="menu-features-slider__slide-highlight menu-features-slider__slide-highlight--slide3">Gamer-friendly platform.</b> We’re here to make a difference in the way you buy and play your games, giving you freedom of choice and a hassle-free experience.</div></div><div class="menu-features-slider__timer is-on js-timer"><span class="menu-features-slider__timer-section js-timer-section"></span><span class="menu-features-slider__timer-section js-timer-section"></span><span class="menu-features-slider__timer-section js-timer-section"></span></div></div>
+                    </div>
+                </div><div class="menu-item menu-item--animated menu-account has-submenu js-menu-account ng-hide" ng-controller="menuAccountCtrl as account" ng-show="account.isUserLoggedIn" ng-mouseenter="menu.showWithDelay($event, 'account')" ng-mouseleave="menu.hide($event, 'account')" hook-test="menuAccount">
+                    <a href="/account" class="menu-link" hook-test="menuAccountButton" ng-touchstart="$event.preventDefault(); menu.toggle($event, 'account')"><!-- ngIf: account.userAvatars --><img ng-srcset=" 1x,  2x" class="menu-link__image" ng-if="account.userAvatars" srcset="1x ,2x"><!-- end ngIf: account.userAvatars --><span id="menuUsername" class="menu-username" ng-bind="account.username"></span><svg viewBox="0 0 32 32" class="menu-link__dropdown-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-down2"></use></svg><span class="menu-triangle menu-triangle--others"></span></a><div class="menu-submenu menu-account__submenu" ng-mouseenter="menu.cancelTimeout('account')">
+                        <div class="menu-header menu-account__user"><div class="menu-account__user-in"><!-- ngIf: account.userAvatars --><img ng-srcset=" 1x,  2x" class="menu-account__user-avatar" ng-if="account.userAvatars" srcset="1x ,2x"><!-- end ngIf: account.userAvatars --><span class="menu-header__label">Your account</span><span class="menu-account__user-name" ng-bind="account.username"></span></div></div><div class="menu-submenu-item menu-submenu-item--hover">
+                            <a href="/account" class="menu-submenu-link" hook-test="menuAccountGames" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Games ACCOUNT'}">
+                                Games
+                                <span class="menu-submenu-item__label ng-hide" ng-show="account.userGamesCount > 0" ng-bind="account.userGamesCount">0</span>
+                            </a>
+                        </div><div class="menu-submenu-item menu-submenu-item--hover">
+                            <a href="/account/movies" class="menu-submenu-link" hook-test="menuAccountMovies" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Movies ACCOUNT'}">
+                                Movies
+                                <span class="menu-submenu-item__label ng-hide" ng-show="account.userMoviesCount > 0" ng-bind="account.userMoviesCount">0</span>
+                            </a>
+                        </div><div class="menu-submenu-item menu-submenu-item--hover">
+                            <a href="/account/wishlist" class="menu-submenu-link" hook-test="menuAccountWishlist" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Wishlist ACCOUNT'}">
+                                Wishlist
+                                <span class="menu-submenu-item__label ng-hide" ng-show="account.userWishlistedItemsCount > 0" ng-bind="account.userWishlistedItemsCount">0</span>
+                            </a>
+                        </div><div class="menu-submenu-item menu-submenu-item--hover"><a href="/redeem" class="menu-submenu-link" hook-test="menuAccountRedeemCode" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Redeem ACCOUNT'}">Redeem a code</a></div><div class="menu-submenu-separator"></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="/account/friends" class="menu-submenu-link" hook-test="menuAccountFrieds" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Friends ACCOUNT'}">Friends</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="/account/chat" class="menu-submenu-link" hook-test="menuAccountChat" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Chat ACCOUNT'}">Chat</a></div><div class="menu-submenu-item menu-submenu-item--hover"><a href="/forum/myrecentposts" class="menu-submenu-link" hook-test="menuAccountForumReplies" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Forum replies ACCOUNT'}">Forum replies</a></div><div class="menu-submenu-separator"></div><div class="menu-submenu-item menu-submenu-item--hover menu-submenu-item--with-wallet">
+                            <a href="/wallet" class="menu-submenu-link" hook-test="menuAccountWallet" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Wallet ACCOUNT'}">
+                                Your Wallet
+                                <span class="menu-submenu-item__label _price ng-hide" ng-show="account.userWalletBalance > 0" ng-bind="account.userWalletBalance">0</span>
+                            </a>
+                        </div><div class="menu-submenu-item menu-submenu-item--hover"><a href="/account/settings/orders" class="menu-submenu-link" hook-test="menuAccountOrdersAndSettings" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Orders and settings ACCOUNT'}">Orders &amp; settings</a></div><div class="menu-submenu-item menu-submenu-item--static menu-submenu-item--hover" gog-menu-lang-and-currency="" ng-class="{ 'is-active': langAndCurrency.isVisible }" ng-mouseenter="langAndCurrency.show()" ng-mouseleave="langAndCurrency.hide()">
+                            <a href="/account/settings/personal" class="menu-submenu-link" hook-test="menuAccountLangAndCurrency" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Language and currency ACCOUNT'}" ng-touchstart="$event.preventDefault(); langAndCurrency.show()">
+                                Language &amp; currency
+
+                                <svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg><svg viewBox="0 0 32 32" class="menu-submenu-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right4"></use></svg>
+                            </a><div class="menu-language-and-currency" ng-class="{ 'is-visible': langAndCurrency.isVisible }" ng-mouseenter="langAndCurrency.cancelHidding()">
+                                <div class="menu-language">
+                                    <p class="menu-language-and-currency__header">Language:</p><ul class="menu-language-and-currency__list">
+                                        <li class="menu-language-and-currency__list-item is-active" ng-class="{'is-active': langAndCurrency.currentLanguageCode == 'en-US'}" ng-click="langAndCurrency.changeLanguage('en-US')">
+                                            <i class="ic icon-tick menu-language-and-currency__tick"></i>
+                                            English
+                                        </li>
+                                        <li class="menu-language-and-currency__list-item" ng-class="{'is-active': langAndCurrency.currentLanguageCode == 'de-DE'}" ng-click="langAndCurrency.changeLanguage('de-DE')">
+                                            <i class="ic icon-tick menu-language-and-currency__tick"></i>
+                                            Deutsch
+                                        </li>
+                                        <li class="menu-language-and-currency__list-item" ng-class="{'is-active': langAndCurrency.currentLanguageCode == 'fr-FR'}" ng-click="langAndCurrency.changeLanguage('fr-FR')">
+                                            <i class="ic icon-tick menu-language-and-currency__tick"></i>
+                                            Français
+                                        </li>
+                                        <li class="menu-language-and-currency__list-item" ng-class="{'is-active': langAndCurrency.currentLanguageCode == 'pl-PL'}" ng-click="langAndCurrency.changeLanguage('pl-PL')">
+                                            <i class="ic icon-tick menu-language-and-currency__tick"></i>
+                                            Polski
+                                        </li>
+                                        <li class="menu-language-and-currency__list-item" ng-class="{'is-active': langAndCurrency.currentLanguageCode == 'pt-BR'}" ng-click="langAndCurrency.changeLanguage('pt-BR')">
+                                            <i class="ic icon-tick menu-language-and-currency__tick"></i>
+                                            Português do Brasil
+                                        </li>
+                                        <li class="menu-language-and-currency__list-item" ng-class="{'is-active': langAndCurrency.currentLanguageCode == 'ru-RU'}" ng-click="langAndCurrency.changeLanguage('ru-RU')">
+                                            <i class="ic icon-tick menu-language-and-currency__tick"></i>
+                                            Pусский
+                                        </li>
+                                        <li class="menu-language-and-currency__list-item" ng-class="{'is-active': langAndCurrency.currentLanguageCode == 'zh-Hans'}" ng-click="langAndCurrency.changeLanguage('zh-Hans')">
+                                            <i class="ic icon-tick menu-language-and-currency__tick"></i>
+                                            中文(简体)
+                                        </li>
+                                    </ul>
+                                </div><p class="menu-language-and-currency__header">Currency:</p><ul class="menu-language-and-currency__list">
+                                    <li class="menu-language-and-currency__list-item is-active" ng-class="{'is-active': langAndCurrency.currentCurrencyCode == 'USD'}" ng-click="langAndCurrency.changeCurrency('USD')">
+                                        <i class="ic icon-tick menu-language-and-currency__tick"></i>
+                                        USD
+                                    </li>
+                                </ul><div class="menu-language-and-currency__footer" ng-class="{'is-visible': langAndCurrency.showApplyButton}"><a class="menu-language-and-currency__apply" ng-click="langAndCurrency.applyChanges()" hook-test="menuAccountLangAndCurrencyApply">Apply changes</a></div>
+                            </div>
+                        </div><div class="menu-submenu-separator"></div><div class="menu-submenu-item menu-submenu-item--hover" hook-test="menuAccountSignOut" gog-track-event="{eventAction: 'Click', eventCategory: 'topBar', eventLabel: 'Sign out ACCOUNT'}"><a ng-click="account.logout()" class="menu-submenu-link">Sign out</a></div>
+                    </div>
+                </div>
+            </div><div class="menu-tray">
+                <div class="menu-item menu-item--invisible-on-loading menu-notifications has-submenu js-menu-notifications ng-hide" ng-controller="menuNotificationsCtrl as notifications" ng-show="notifications.isVisible" hook-test="menuNotifications">
+                    <a class="menu-link menu-link--icon" ng-click="menu.toggle($event, 'notifications', true)" ng-mouseleave="menu.hide($event, 'notifications', 600)" ng-mouseenter="menu.cancelTimeout('notifications')" ng-class="{ 'is-notifying': notifications.newNotificationAnimation }" hook-test="menuNotificationsButton"><svg viewBox="0 0 15 16" class="menu-icon-svg menu-icon-svg--notifications" ng-class="{ 'got-notification': notifications.newNotificationAnimation }"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-notification"></use></svg><span class="menu-item__count menu-item__count--notifications" ng-bind="notifications.notificationsCountLabel" ng-class="{ 'is-highlighted': notifications.haveNewNotifications }">0</span><span class="menu-triangle menu-triangle--centered  menu-triangle--others"></span></a><div class="menu-submenu menu-notifications__submenu" ng-mouseleave="menu.hideOnMouseleave($event, 'notifications', 600)" ng-mouseenter="menu.cancelTimeout('notifications')">
+                        <div class="menu-header menu-header-notifications ng-hide" ng-show="notifications.list.length > 0" ng-class="{
+                             'has-unread-notifications' : notifications.notificationsCount>
+                            0
+                            }"><div class="menu-header__label">Your notifications</div><div class="menu-header__unread menu-header-notifications--has-unread-notifications">
+                                0 pending
+                            </div><div class="menu-header__unread menu-header-notifications--no-unread-notifications">
+                                There’s nothing to read yet
+                            </div><a class="menu-btn menu-btn--gray menu-header__btn menu-header-notifications__btn--mark-all-as-read menu-uppercase" ng-click="notifications.deleteAllNotifications(); menu.cancelTimeout('notifications')" hook-test="clearAllNotifications">Clear all</a>
+                        </div><div class="menu-notifications-empty" ng-show="notifications.showEmptyNotificationsMessage">
+                            <div class="menu-notifications-empty__header menu-uppercase">
+                                <svg viewBox="0 0 32 32" class="menu-notifications-empty__header-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-notifications-empty"></use></svg>
+
+                                Your Notifications
+                            </div><hr class="menu-notifications-empty__line"><div class="menu-notifications-empty__description">
+                                See new chat messages, forum replies, friend invites, as well as important announcements and deals relevant to you
+                            </div>
+                        </div><div class="menu-notifications__list _gog-menu-scrollbar ng-hide" gog-menu-scrollbar="" gog-menu-scrollbar-refresh="0" ng-hide="notifications.showEmptyNotificationsMessage"><div class="js-gog-scrollbar-wrapper _gog-menu-scrollbar__wrapper"><div class="js-gog-scrollbar-content _gog-menu-scrollbar__content menu-notifications__content" style="width: 100%;"><div class="menu-notifications__list-in"><!-- ngRepeat: notification in notifications.list track by notification.id --></div><div class="js-gog-scrollbar-bar _gog-menu-scrollbar__bar is-disabled"></div></div></div></div>
+                    </div>
+                </div><div class="menu-item menu-friends has-submenu js-menu-friends ng-hide" ng-controller="menuFriendsCtrl as friends" ng-show="friends.isVisible">
+                    <a class="menu-link menu-link--icon" ng-click="menu.toggle($event, 'friends', true)" hook-test="menuFriends"><svg viewBox="0 0 17 16" class="menu-icon-svg menu-icon-svg--friends"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-friends2"></use></svg><span class="menu-item__count menu-item__count--friends" ng-bind="friends.online">0</span><span class="menu-triangle menu-triangle--centered  menu-triangle--others"></span></a><div class="menu-submenu menu-friends__submenu">
+                        <div class="menu-header ng-hide" ng-show="friends.total">
+                            <div class="menu-header__label">Your friends</div><div class="menu-header__online ng-hide" ng-show="friends.total">
+                                <span ng-bind="friends.online">0</span>
+                                online right now
+                            </div><div class="menu-header__online" ng-hide="friends.total">
+                                Friends list is currently empty
+                            </div><a href="/account/friends" class="menu-btn menu-header__btn menu-friends__btn menu-uppercase ng-hide" ng-show="friends.total">Manage friends</a>
+                        </div><div class="menu-friends-empty" ng-hide="friends.total">
+                            <div class="menu-friends-empty__header menu-uppercase">
+                                <svg viewBox="0 0 32 32" class="menu-friends-empty__header-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-friends2"></use></svg>
+
+                                Connect with friends
+                            </div><hr class="menu-friends-empty__line"><div class="menu-friends-empty__description" ng-hide="friends.isLoadingFriendlist">
+                                Play, chat, and share experiences with your friends on GOG.com
+                            </div><div class="menu-friends-empty__spinner is-spinning ng-hide" ng-show="friends.isLoadingFriendlist"></div><a href="/account/friends" class="menu-btn menu-friends-empty__btn menu-uppercase" ng-hide="friends.isLoadingFriendlist">
+                                Invite friends
+                            </a>
+                        </div><div class="menu-friends__list _gog-menu-scrollbar ng-hide" gog-menu-scrollbar="" gog-menu-scrollbar-refresh="0" ng-show="friends.total"><div class="js-gog-scrollbar-wrapper _gog-menu-scrollbar__wrapper"><div class="js-gog-scrollbar-content _gog-menu-scrollbar__content menu-friends__content" style="width: 100%;"><div class="menu-friends__list-in"><!-- ngRepeat: friend in friends.friendsList track by $index --></div><div class="js-gog-scrollbar-bar _gog-menu-scrollbar__bar is-disabled"></div></div></div><span class="menu__list-shadow"></span></div>
+                    </div>
+                </div><div class="menu-item menu-cart has-submenu js-menu-cart" ng-controller="menuCartCtrl as cart" hook-test="menuCart">
+                    <a class="menu-link menu-link--icon menu-link--cart" ng-click="menu.toggle($event, 'cart', true)" ng-mouseleave="menu.hide($event, 'cart', 600)" ng-mouseenter="menu.cancelTimeout('cart')" ng-class="{ 'is-notifying': cart.itemAddedAnimation }" hook-test="menuCartButton"><svg viewBox="0 0 32 32" class="menu-icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart2"></use></svg><span class="menu-item__count menu-item__count--cart" ng-show="cart.cartCount <= 99" ng-bind="cart.cartCount" ng-class="{ 'is-highlighted': cart.itemAdded }" hook-test="cartCounter">0</span><span class="menu-item__count menu-item__count--cart ng-hide" ng-show="cart.cartCount > 99">99+</span><span class="menu-triangle menu-triangle--centered" ng-class="{'menu-triangle--others': !cart.isCartEmpty}"></span></a><div class="menu-submenu menu-cart__submenu" ng-mouseleave="menu.hideOnMouseleave($event, 'cart', 600)" ng-mouseenter="menu.cancelTimeout('cart')">
+                        <div class="menu-header menu-header-cart ng-hide" ng-hide="cart.isCartEmpty">
+                            <a class="menu-cart__btn menu-btn menu-btn--green ng-hide" ng-click="cart.goToCheckout()" ng-class="{ 'is-spinning': cart.isSpinnerVisible }" ng-show="!cart.isCartEmpty" hook-test="cartCheckoutNow">
+                                Go to checkout
+                            </a><div class="menu-cart-items" ng-hide="cart.isSpinnerVisible">
+                                <span class="menu-header__label hide-in-lite-mode">Your shopping cart</span><span class="menu-header__label hide-in-normal-mode hide-in-grouped-mode" ng-show="cart.isCartEmpty">Your shopping cart</span><span class="menu-header__items" ng-show="cart.isCartEmpty">
+                                    is empty right now.
+                                </span><span class="menu-header__label hide-in-normal-mode hide-in-grouped-mode ng-hide" ng-show="!cart.isCartEmpty">
+                                    <span ng-bind="cart.cartCount">0</span>&nbsp;<ng-pluralize count="cart.cartCount" when="{
+                        'one' : 'Item in cart',
+                        'few' : 'Items in cart',
+                        'many' : 'Items in cart',
+                        'other': 'Items in cart'
+                     }">Items in cart</ng-pluralize>
+                                </span><span class="menu-header__items hide-in-lite-mode ng-hide" ng-show="!cart.isCartEmpty">
+                                    <span ng-bind="cart.cartCount">0</span>&nbsp;<ng-pluralize count="cart.cartCount" when="{
+                        'one' : 'Item added',
+                        'few' : 'Items added',
+                        'many' : 'Items added',
+                        'other': 'Items added'
+                     }">Items added</ng-pluralize>
+                                </span>
+                            </div><div class="menu-cart__total-price _price ng-hide" ng-bind="cart.cartTotalPrice.amount" ng-hide="cart.isSpinnerVisible || cart.cartTotalPrice.isZero || cart.isCartEmpty" hook-test="cartTotalPrice"></div>
+                        </div><div class="menu-cart-empty" ng-show="cart.isCartEmpty">
+                            <div class="menu-cart-empty__header menu-uppercase">
+                                <svg viewBox="0 0 32 32" class="menu-cart-empty__header-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart2"></use></svg>
+
+                                Your cart is empty
+                            </div><hr class="menu-cart-empty__line"><div class="menu-cart-empty__description">
+                                Explore great games and offers
+                            </div><a class="menu-btn menu-cart-empty__btn menu-uppercase" href="/games">
+                                Browse bestsellers
+                            </a><a class="menu-btn menu-cart-empty__btn menu-cart-empty__btn--wishlist menu-uppercase ng-hide" ng-show="cart.isWishlistButtonVisible" href="/account/wishlist">
+                                Your wishlist
+                            </a>
+                        </div><div class="menu-cart__products-list"><div class=" _gog-menu-scrollbar" gog-menu-scrollbar="" gog-menu-scrollbar-refresh="0"><div class="js-gog-scrollbar-wrapper _gog-menu-scrollbar__wrapper"><div class="js-gog-scrollbar-content _gog-menu-scrollbar__content menu-cart__content" style="width: 100%;"><!-- ngRepeat: productId in cart.products --><div class="js-gog-scrollbar-bar _gog-menu-scrollbar__bar is-disabled"></div></div></div><span class="menu__list-shadow"></span></div></div>
+                    </div>
+                </div><div class="menu-item js-menu-search" ng-controller="menuSearchCtrl as search">
+                    <a class="menu-link menu-link--last menu-link--search menu-link--icon" ng-click="menu.toggle($event, 'search', true)" hook-test="menuSearch"><svg viewBox="0 0 14.69 16" class="menu-icon-svg menu-icon-svg--search"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search2"></use></svg></a><div class="menu-submenu menu-search" gog-menu-search="">
+                        <div class="menu-search-toolbar">
+                            <svg viewBox="0 0 32 32" class="menu-search-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search2"></use></svg><div class="menu-search-input">
+                                <input type="text" class="menu-search-input__field js-menu-search-input ng-pristine ng-untouched ng-valid" ng-model="search.searchTerm" ng-change="search.searchTermChange()" ng-model-options="{ debounce: {'default': 300} }" hook-test="menuSearchInput"><a class="menu-search-input__clear menu-search-loader menu-uppercase ng-hide" ng-class="{ 'is-loading': search.isLoading }" ng-click="search.clear()" ng-show="search.searchTerm.length > 0">
+                                    clear
+                                    <span class="menu-search-loader__ball"></span><span class="menu-search-loader__ball"></span><span class="menu-search-loader__ball"></span><span class="menu-search-loader__ball"></span>
+                                </a>
+                            </div><a class="menu-search-toolbar__results-count menu-uppercase ng-hide" ng-class="{ 'is-active': search.selectedCategory == 'games' }" ng-click="search.showGames()" ng-show="search.totalGames" hook-test="menuSearchGames">
+                                <span ng-bind="search.totalGames">0</span> Games
+                                <span class="menu-triangle menu-triangle--centered"></span>
+                            </a><a class="menu-search-toolbar__results-count menu-uppercase ng-hide" ng-class="{ 'is-active': search.selectedCategory == 'movies' }" ng-click="search.showMovies()" ng-show="search.totalMovies" hook-test="menuSearchMovies">
+                                <span ng-bind="search.totalMovies">0</span> Movies
+                                <span class="menu-triangle menu-triangle--centered"></span>
+                            </a><a class="menu-search-toolbar__close" ng-click="menu.hide($event, 'search')"><svg viewBox="0 0 32 32" class="menu-icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close4"></use></svg></a>
+                        </div><div class="menu-search__no-results ng-hide" ng-show="search.selectedCategoryProducts.length == 0 &amp;&amp; search.searchCount > 0 &amp;&amp; !search.isLoading">
+                            <div class="menu-search-empty">
+                                <div class="menu-search-empty__header menu-uppercase">
+                                    <svg viewBox="0 0 32 32" class="menu-search-empty__header-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search2"></use></svg>
+
+                                    No results found
+                                </div><hr class="menu-search-empty__line"><div class="menu-search-empty__description">
+                                    Try adjusting the terms of your search, you can search by game titles, publishers, and developers.
+                                </div><a href="/games" class="menu-btn menu-search-empty__btn menu-uppercase ng-hide" ng-show="search.selectedCategory == 'games'">
+                                    Browse all games
+                                </a><a href="/movies" class="menu-btn menu-search-empty__btn menu-uppercase ng-hide" ng-show="search.selectedCategory == 'movies'">
+                                    Browse movies
+                                </a>
+                            </div>
+                        </div><div class="menu-search__results ng-hide" ng-show="search.selectedCategoryProducts.length">
+                            <div class="menu-search__results-list _gog-menu-scrollbar" gog-menu-scrollbar="search" gog-menu-scrollbar-refresh="0">
+                                <div class="js-gog-scrollbar-wrapper _gog-menu-scrollbar__wrapper">
+                                    <div class="js-gog-scrollbar-content _gog-menu-scrollbar__content menu-search__content js-menu-search-content" style="width: 100%;">
+                                        <div class="menu-search__results-rows list--rows">
+                                            <!-- ngRepeat: result in search.selectedCategoryProducts track by result.id --><a ng-href="/games?search=" class="menu-btn menu-btn--full menu-search__results-more ng-hide" ng-show="search.selectedCategory == 'games' &amp;&amp; search.totalGames > 20" href="/games?search=">
+                                                BROWSE <span ng-bind="search.totalGames">0</span> GAMES
+                                            </a><a ng-href="/movies?search=" class="menu-btn menu-btn--full menu-search__results-more ng-hide" ng-show="search.selectedCategory == 'movies' &amp;&amp; search.totalMovies > 20" href="/movies?search=">BROWSE <span ng-bind="search.totalMovies">0</span> MOVIES</a>
+                                        </div>
+                                    </div><div class="js-gog-scrollbar-bar _gog-menu-scrollbar__bar is-disabled"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="menu-item menu-lite js-menu-lite" ng-controller="menuGamesCtrl as games">
+                    <a class="menu-lite-link hide-in-normal-mode hide-in-grouped-mode menu-uppercase" ng-click="menu.toggle($event, 'lite', true)">
+                        <span class="menu-hamburger"><span class="menu-hamburger__line"></span><span class="menu-hamburger__line"></span><span class="menu-hamburger__line"></span></span>
+
+                        Menu
+                    </a><div class="menu-submenu menu-lite__submenu">
+                        <div class="menu-submenu-item  menu-submenu-item--hover"><a href="/games" class="menu-submenu-link menu-submenu-link--lite">Store</a></div><div class="menu-submenu-item  menu-submenu-item--hover"><a href="/about_gog" class="menu-submenu-link menu-submenu-link--lite">About</a></div><div class="menu-submenu-item  menu-submenu-item--hover"><a href="/forum" class="menu-submenu-link menu-submenu-link--lite">Community</a></div><div class="menu-submenu-item  menu-submenu-item--hover"><a href="https://support.gog.com/hc/en-us" class="menu-submenu-link menu-submenu-link--lite">Support</a></div><!-- ngRepeat: customCategory in games.customCategories track by customCategory.name --><div class="menu-submenu-item  menu-submenu-item--hover" ng-repeat="customCategory in games.customCategories track by customCategory.name"><a ng-href="/game/pillars_of_eternity_ii_deadfire" class="menu-submenu-link menu-submenu-link--lite menu-custom-category-link" ng-style="{'color': customCategory.customisation.categoryColor }" href="/game/pillars_of_eternity_ii_deadfire" style="color: rgb(0, 170, 187);">Pillars of Eternity II: Deadfire</a></div><!-- end ngRepeat: customCategory in games.customCategories track by customCategory.name --><div class="menu-submenu-item  menu-submenu-item--hover" ng-repeat="customCategory in games.customCategories track by customCategory.name"><a ng-href="/game/divinity_original_sin_2" class="menu-submenu-link menu-submenu-link--lite menu-custom-category-link" ng-style="{'color': customCategory.customisation.categoryColor }" href="/game/divinity_original_sin_2" style="color: rgb(166, 8, 18);">Divinity: Original Sin 2</a></div><!-- end ngRepeat: customCategory in games.customCategories track by customCategory.name --><div class="menu-lite-account ng-hide" ng-controller="menuAccountCtrl as account" ng-show="account.isUserLoggedIn" gog-menu-swipe="">
+                            <div class="menu-header menu-account__user" ng-click="menuSwipe.toggle()"><div class="menu-account__user-in"><!-- ngIf: account.userAvatar --><span class="menu-account__user-name" ng-bind="account.username"></span></div></div><div class="menu-account__list _gog-menu-scrollbar" gog-menu-scrollbar="">
+                                <div class="js-gog-scrollbar-wrapper _gog-menu-scrollbar__wrapper">
+                                    <div class="js-gog-scrollbar-content _gog-menu-scrollbar__content menu-account__content" ng-touchstart="$event.stopPropagation();" style="width: calc(100% + 17px);">
+                                        <a href="/account" class="menu-account-link">
+                                            Games
+                                            <span class="menu-submenu-item__label ng-hide" ng-show="account.userGamesCount > 0" ng-bind="account.userGamesCount">0</span>
+                                        </a><a href="/account/movies" class="menu-account-link">
+                                            Movies
+                                            <span class="menu-submenu-item__label ng-hide" ng-show="account.userMoviesCount > 0" ng-bind="account.userMoviesCount">0</span>
+                                        </a><a href="/account/wishlist" class="menu-account-link">
+                                            Wishlist
+                                            <span class="menu-submenu-item__label ng-hide" ng-show="account.userWishlistedItemsCount > 0" ng-bind="account.userWishlistedItemsCount">0</span>
+                                        </a><a href="/redeem" class="menu-account-link">Redeem a code</a><div class="menu-submenu-separator"></div><a href="/account/friends" class="menu-account-link">Friends</a><a href="/account/chat" class="menu-account-link">Chat</a><a href="/forum/myrecentposts" class="menu-account-link">Forum replies</a><div class="menu-submenu-separator"></div><a href="/wallet" class="menu-account-link">
+                                            Your Wallet
+                                            <span class="menu-submenu-item__label _price ng-hide" ng-show="account.userWalletBalance > 0" ng-bind="account.userWalletBalance">0</span>
+                                        </a><a href="/account/settings/orders" class="menu-account-link">Orders &amp; settings</a><a href="/account/settings/personal" class="menu-account-link">Language &amp; currency</a><div class="menu-submenu-separator"></div><a ng-click="account.logout()" class="menu-account-link">Sign out</a><div class="js-gog-scrollbar-bar _gog-menu-scrollbar__bar is-disabled"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="menu-lite-anonymous" ng-controller="menuAnonymousCtrl as anonymous" ng-show="anonymous.isResponseFetched &amp;&amp; !anonymous.isUserLoggedIn" gog-menu-swipe="">
+                            <a class="menu-link menu-link--anonymous" ng-click="menuSwipe.toggle()"><span>Sign in</span></a><div class="menu-header menu-anonymous-header">
+                                <a href="#" class="menu-btn menu-btn--gray menu-anonymous-header__btn menu-anonymous-header__btn--create-account menu-uppercase" ng-click="anonymous.openRegistration()">
+                                    Create account
+                                </a><span class="menu-anonymous-header__separator"></span><a href="#" class="menu-btn menu-anonymous-header__btn menu-anonymous-header__btn--sign-in menu-uppercase" ng-click="anonymous.openLogin()">
+                                    Sign in
+                                </a>
+                            </div><figure class="menu-anonymous__shelf"></figure><p class="menu-anonymous__about">
+                                <b>
+                                    GOG.com is a digital distribution platform – an online store with a curated selection of games, an optional gaming client giving you freedom of choice, and a vivid community of gamers.
+                                </b>
+                                All of this born from a deeply rooted love for games,&ensp;utmost care about customers, and a belief that you should own the things you buy.
+                            </p><p class="menu-anonymous__features-header"><span class="menu-anonymous__features-header-in">What is GOG.com about?</span></p><div class="menu-features-slider" gog-menu-features-slider="" ng-mouseenter="slider.stop()" ng-mouseleave="slider.play()"><span class="menu-features-slider__nav menu-features-slider__nav--left" ng-click="slider.triggerPrevSlide()"><svg viewBox="0 0 32 32" class="menu-features-slider__nav-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-fat-arrow-left"></use></svg></span><span class="menu-features-slider__nav menu-features-slider__nav--right" ng-click="slider.triggerNextSlide()"><svg viewBox="0 0 32 32" class="menu-features-slider__nav-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-fat-arrow-right"></use></svg></span><div class="menu-features-slider__slide js-slide is-active"><div class="menu-features-slider__slide-text"><svg viewBox="0 0 32 32" class="menu-features-slider__slide-icon menu-features-slider__slide-icon--slide1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star"></use></svg><b class="menu-features-slider__slide-highlight menu-features-slider__slide-highlight--slide1">Hand-picking the best in gaming.</b> A selection of great games, from modern hits to all-time classics, that you really shouldn’t miss.</div></div><div class="menu-features-slider__slide js-slide"><div class="menu-features-slider__slide-text"><svg viewBox="0 0 32 32" class="menu-features-slider__slide-icon menu-features-slider__slide-icon--slide2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"></use></svg><b class="menu-features-slider__slide-highlight menu-features-slider__slide-highlight--slide2">Customer-first approach.</b> Delivering user-friendly support enriched with additional customer benefits.</div></div><div class="menu-features-slider__slide js-slide"><div class="menu-features-slider__slide-text"><svg viewBox="0 0 32 32" class="menu-features-slider__slide-icon menu-features-slider__slide-icon--slide3"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-hand-picked"></use></svg><b class="menu-features-slider__slide-highlight menu-features-slider__slide-highlight--slide3">Gamer-friendly platform.</b> We’re here to make a difference in the way you buy and play your games, giving you freedom of choice and a hassle-free experience.</div></div><div class="menu-features-slider__timer is-on js-timer"><span class="menu-features-slider__timer-section js-timer-section"></span><span class="menu-features-slider__timer-section js-timer-section"></span><span class="menu-features-slider__timer-section js-timer-section"></span></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><div class="menu-fonts-preloader"><span style="font-weight:300;">.</span><span style="font-weight:400;">.</span><span style="font-weight:500;">.</span><span style="font-weight:600;">.</span><span style="font-weight:700;">.</span><span style="font-weight:800;">.</span></div>
+    </nav>
+</body>
+</html>

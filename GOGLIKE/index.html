@@ -9,261 +9,530 @@
     <script src="bootstrap-4.0.0/js/bootstrap.js"></script>
     <link href="Content/site.css" rel="stylesheet" />
     <style>
+        .menu li:hover .submenu {
+            display: block;
+            -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+            transition: width 2s;
+        }
+        /*.menu li:hover triangle {
+            display: block !important;
+        }*/
+    </style>
+    <style>
+        .row {
+            margin-top: -20px;
+        }
+
+        .col-sm-6, .col-sm-12 {
+            margin-top: 20px;
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        }
+
+        .bottom-main-div > .col-sm-6, .col-sm-12 {
+            padding-right: 15px !important;
+            padding-left: 15px !important;
+        }
+
+        .bottom-main-div .row {
+            margin-top: 0px !important;
+        }
+
+        @media (min-width: 1200px) {
+            .row {
+                margin-right: -10px;
+                margin-left: -10px;
+            }
+        }
+
+        .small-box {
+            height: 200px;
+            width: 100%;
+            background-size: cover;
+        }
+
+        .large-box {
+            height: 300px;
+            width: 100%;
+            background-size: cover;
+        }
+
+        @media (min-width: 992px) {
+            .bottom-main-div > .row {
+                margin-top: 20px !important;
+            }
+
+            .row {
+                margin-right: -10px;
+                margin-left: -10px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 990px) {
+            .bottom-main-div > .row {
+                margin-top: 20px !important;
+            }
+
+            .col-sm-6 {
+                -webkit-box-flex: 0;
+                -webkit-flex: 0 0 100%;
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .half-menu {
+                display: block !important;
+            }
+
+            .full-menu {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .bottom-main-div > .row {
+                margin-top: 20px !important;
+            }
+
+            .row {
+                margin-right: -10px;
+                margin-left: -10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .bottom-main-div .row {
+                margin-top: 20px !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+
+            .col-sm-6 {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+        }
+
+        .image-footer:hover .sale-button-small {
+            background: linear-gradient(to bottom,#9fbf00,#80ab00);
+            color: white;
+        }
+
+        .image-footer:hover .sale-button {
+            background: linear-gradient(to bottom,#9fbf00,#80ab00);
+            color: white;
+        }
+
+        .image-footer:hover .sale-button-small {
+            background: linear-gradient(to bottom,#9fbf00,#80ab00);
+            color: white;
+        }
+
+        .image-footer:hover .original-price {
+            display: none;
+        }
+
+        .image-footer:hover .buy-now-button {
+            display: block;
+        }
+
+        .item-container {
+            height: 100%;
+        }
+
+            .item-container:hover .sale-button {
+                display: none;
+            }
+
+            .item-container:hover .buy-now-button {
+                display: block;
+            }
+
+        @media (max-width: 576px) {
+            .bottom-main-div .row {
+                margin-top: 20px !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+
+            .container {
+                width: 576px;
+                max-width: 100%;
+            }
+        }
+
+        .image-banner {
+            background-size: cover;
+            height: 100px;
+            margin-top: 15px;
+            width: 100%;
+            padding: 15px;
+        }
+
+        @media(max-width:850px) {
+            .bottom-main-div .row {
+                margin-top: 20px !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+
+            .image-banner {
+                height: 200px !important;
+            }
+
+                .image-banner > .col-sm-9 {
+                    max-width: 100%;
+                    text-align: center;
+                }
+
+                .image-banner > .col-sm-2 {
+                    max-width: 100%;
+                    text-align: center;
+                    float: none !important;
+                }
+
+                    .image-banner > .col-sm-2 > button {
+                        float: none !important;
+                    }
+        }
+
+        .image-banner > col-sm-2 {
+        }
+
+        @media (max-width:995px) {
+            .image-banner {
+                height: auto !important;
+            }
+
+            .bottom-main-div .row {
+                margin-top: 20px !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+        }
+
+        .half-menu {
+            display: none;
+        }
+
+        .full-menu {
+            display: block;
+        }
+
+        .menu-items {
+            display: none;
+        }
+        .news-item {            
+            width: 100%;
+            height: 100%;
+        }
+        .news-item-container {
+            width: 100%;
+            height: 150px;
+            cursor: pointer;
+            background-color: #c3c3c3;
+            margin-bottom:1px;
+        }
+            .news-item-container:hover {
+                opacity: 0.80;
+                background-color: #dcdcdc;
+            }
+        .news-image {
+            width: 35%;
+            height: 100%;
+            float: left;
+            background-size:cover;
+            background-repeat:no-repeat;
+        }
+        .news {
+            width: 65%;
+            height: 100%;
+            float: left;
+            overflow: hidden;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
     </style>
 </head>
 <body>
-    <div class="main">
-        <div class="navbar-main-container">
-            <div class="navigationbar">
-                <header>
-                    <div class="container">
-                        <nav>
-                            <ul class="outer-nav" id="main-nav">
-                                <li class="outer-nav-item has-nav-dropdown-item-1">
-                                    <a href="#" class="has-dropdown-menu">
-                                        Store
-                                        <i class="fas fa-caret-down">
-                                        </i>
+    <div class="main-div">
+        <header>
+            <div class="" style="">
+
+            </div>
+            <div class="container">
+                <nav>
+                    <ul class="menu">
+                        <li>
+                            <a href="#">
+                                Home
+
+                            </a>
+                            <span class="triangle"></span>
+                            <ul class="submenu" id="submenu1">
+
+                                <li>
+                                    <a href="#" style="color:rgb(0, 170, 187)">
+                                        <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
+
+                                        <span>
+                                            Pillars of Eternity II: DeadFire
+                                        </span>
                                     </a>
-                                    <div class="is-dropdown-menu" id="nav-dropdown-item-1">
-                                        <i class="fas fa-caret-up" style="position: fixed;top: 58px;color: white;"></i>
-                                        <ul class="inner-nav">
-                                            <li>
-                                                <a href="#">
-                                                    Subdropdown
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
+                                        About
+                                    </a>
+                                </li>
+                                <li class="menu-divider"></li>
+                                <li class="disabled">
+                                    <a href="#">
+                                        <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
+                                        About
+                                    </a>
                                 </li>
                             </ul>
-                        </nav>
-                    </div>
-                </header>
+                        </li>
+                        <li>
+                            <a href="#">
+                                About
+                            </a>
+                            <ul class="submenu" id="submenu2">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
+                                        Home
+
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
+                                        About
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-        </div>
-        <div class="first-inner-main-div">
+        </header>
+        <div class="top-main-div">
             <div class="container">
-                <div class="col-sm-12 col-lg-12 col-md-12">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="row">
-                                <span style="color: green;font-size: 32px;padding-top: 45px;">
-                                    Pakistan New Year Sale
-                                </span>
+                <h2 class="big-header-main">
+                    Chinese New Year Sale
+                </h2>
+                <h1>
+                    Flash Deals
+                </h1>
+                <p>
+                    500+ deals up to -90% | Ends on February 20
+                </p>
+                <span>
+                    SHARE THE LOVE!
+                </span>
+                <a href="#"><i class="fab fa-facebook-square" style="color:darkblue;height:25px;width:25px;"></i></a>
+                <a href="#"><i class="fab fa-twitter" style="color:skyblue;height:25px;width:25px;"></i></a>
+            </div>
+            <div class="container">
+                <div class="banner-container">
+                    <div class="banner">
+                        <span>FLASH DEAL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="large-box">
+                            <div class="item-container ">
+                                <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                </div>
+                                <div class="image-footer">
+                                    <button class="push-to-right buy-now-button">
+                                        BUY NOW
+                                    </button>
+                                    <button class="push-to-right sale-button" role="button">
+                                        <span class="original-price">$14.99</span><span> $12.69</span>
+                                    </button>
+                                    <button class="push-to-right discount-button">
+                                        -15%
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                            <div class="row">
-                                <label style="color: white;font-weight: 600;font-size: xx-large;">
-                                    Flash Deals
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                            <div class="row">
-                                <span style="border-top: 0.3px solid #b1b1b1;color: #fff;font-weight: 500;padding-top: 5px;">
-                                    500+ deals up to -90% | Ends on February 20
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                            <div class="row" style="padding-top: 20px;padding-bottom: 20px;color: white;">
-                                <span>SHARE THE LOVE </span><a href="#" style="padding-left: 10px;"> <i class="fab fa-facebook-square" style="color:darkblue"></i> </a><a href="#" style="padding-left: 10px;"><i class="fab fa-twitter" style="color:skyblue"></i></a>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="large-box">
+                            <div class="item-container ">
+                                <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                </div>
+                                <div class="image-footer">
+                                    <button class="push-to-right buy-now-button ">
+                                        BUY NOW
+                                    </button>
+                                    <button class="push-to-right sale-button" role="button">
+                                        <span class="original-price">$14.99</span><span> $12.69</span>
+                                    </button>
+                                    <button class="push-to-right discount-button">
+                                        -15%
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-lg-12 col-md-12">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                            <div class="row" style="border-bottom: 1px solid white;">
-                                <label style="color: white;font-size: large;border-bottom: 3px solid #fff;margin-bottom: -2px;font-weight:500;">
-                                    <span>
-                                        FLASH DEALS
-                                    </span>
-                                </label>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                            <div class="row">
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <div class="row item-deal" onmouseover="item_deal_hover('item_1');" onmouseleave="item_deal_mouseleave('item_1')" style="cursor:pointer;">
-                                        <div style="background:;width:100%;margin:20px;margin-left:0px;margin-right:10px; height:300px;">
-                                            <div style="background-image:url('images/8f92d021f43be04541bbd2a515c66b3d.jpg');background-size:cover;height:300px;width:100%;">
-                                                <div class="col-sm-12 col-md-12 col-lg12">
-                                                    <div>
-                                                        <span>Loader....</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
                                         </div>
-                                        <div class="col-sm-12" style="margin-top:-20px;">
-                                            <div class="row" style="background-color: #191c2d;margin-right: -5px;">
-                                                <div style="height:50px">
-                                                    <div style="color: white;position: absolute;padding: 15px;">
-                                                        <i class="fab fa-windows"></i><i class="fab fa-apple"></i> <i class="fab fa-linux"></i>
-                                                    </div>
-                                                    <div class="" style="padding: 10px;position: absolute;right: 10px;">
-                                                        <input type="button" class="btn btn-sm btn-danger pull-right" value="-80%" />
-                                                        <button class="btn btn-sm info buy-item-btn" id="item_1" role="button"><span class="item-offer" id="">PKR 1990 </span><span style="margin-left:10px;">PKR 399</span></button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <div class="row" onmouseover="item_deal_hover('item_2');" onmouseleave="item_deal_mouseleave('item_2')" style="cursor:pointer;">
-                                        <div style="background:;width:100%;margin:20px;margin-left:0px;margin-right:10px; height:300px;">
-                                            <div style="background-image:url('images/Free-ubuntu-desktop-wallpapers-full-hd-desktop-images-windows-10-backgrounds-colourful-hi-res-computer-wallpapers-cool-artwork-1920x1080.jpg');background-size:cover;height:300px;width:100%;">
-                                                <div class="col-sm-12 col-md-12 col-lg12">
-                                                    <div>
-                                                        <span>Loader....</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
                                         </div>
-                                        <div class="col-sm-12" style="margin-top:-20px;">
-                                            <div class="row" style="background-color: #191c2d;margin-right: -5px;">
-                                                <div style="height:50px">
-                                                    <div style="color: white;position: absolute;padding: 15px;">
-                                                        <i class="fab fa-windows"></i><i class="fab fa-apple"></i> <i class="fab fa-linux"></i>
-                                                    </div>
-                                                    <div class="" style="padding: 10px;position: absolute;right: 10px;">
-                                                        <input type="button" class="btn btn-sm btn-danger pull-right" value="-80%" />
-                                                        <button class="btn btn-sm info buy-item-btn" id="item_2" role="button"><span class="item-offer" id="">PKR 1990 </span><span style="margin-left:10px;">PKR 399</span></button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-12 col-lg-12">
-                                            <div class="row">
-                                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                                    <div class="row item-deal" onmouseover="item_deal_hover('item_1');" onmouseleave="item_deal_mouseleave('item_1')" style="cursor:pointer;">
-                                                        <div style="background:;width:100%;margin:20px;margin-left:0px;margin-right:10px; height:150px;">
-                                                            <div style="background-image:url('images/8f92d021f43be04541bbd2a515c66b3d.jpg');background-size:cover;height:150px;width:100%;">
-                                                                <div class="col-sm-12 col-md-12 col-lg12">
-                                                                    <div>
-                                                                        <span>Loader....</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-12" style="margin-top:-20px;">
-                                                            <div class="row" style="background-color: #191c2d;margin-right: -5px;">
-                                                                <div style="height:50px">
-                                                                    <div style="color: white;position: absolute;padding: 15px;">
-                                                                        <i class="fab fa-windows"></i><i class="fab fa-apple"></i> <i class="fab fa-linux"></i>
-                                                                    </div>
-                                                                    <div class="" style="padding: 10px;position: absolute;right: 10px;">
-                                                                        <input type="button" class="btn btn-sm btn-danger pull-right" value="-80%" />
-                                                                        <button class="btn btn-sm info buy-item-btn" id="item_1" role="button"><span class="item-offer" id="">PKR 1990 </span><span style="margin-left:10px;">PKR 399</span></button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                                    <div class="row" onmouseover="item_deal_hover('item_2');" onmouseleave="item_deal_mouseleave('item_2')" style="cursor:pointer;">
-                                                        <div style="background:;width:100%;margin:20px;margin-left:0px;margin-right:10px; height:300px;">
-                                                            <div style="background-image:url('images/Free-ubuntu-desktop-wallpapers-full-hd-desktop-images-windows-10-backgrounds-colourful-hi-res-computer-wallpapers-cool-artwork-1920x1080.jpg');background-size:cover;height:300px;width:100%;">
-                                                                <div class="col-sm-12 col-md-12 col-lg12">
-                                                                    <div>
-                                                                        <span>Loader....</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-12" style="margin-top:-20px;">
-                                                            <div class="row" style="background-color: #191c2d;margin-right: -5px;">
-                                                                <div style="height:50px">
-                                                                    <div style="color: white;position: absolute;padding: 15px;">
-                                                                        <i class="fab fa-windows"></i><i class="fab fa-apple"></i> <i class="fab fa-linux"></i>
-                                                                    </div>
-                                                                    <div class="" style="padding: 10px;position: absolute;right: 10px;">
-                                                                        <input type="button" class="btn btn-sm btn-danger pull-right" value="-80%" />
-                                                                        <button class="btn btn-sm info buy-item-btn" id="item_2" role="button"><span class="item-offer" id="">PKR 1990 </span><span style="margin-left:10px;">PKR 399</span></button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-12 col-lg-12">
-                                            <div class="row">
-                                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                                    <div class="row item-deal" onmouseover="item_deal_hover('item_1');" onmouseleave="item_deal_mouseleave('item_1')" style="cursor:pointer;">
-                                                        <div style="background:;width:100%;margin:20px;margin-left:0px;margin-right:10px; height:300px;">
-                                                            <div style="background-image:url('images/8f92d021f43be04541bbd2a515c66b3d.jpg');background-size:cover;height:300px;width:100%;">
-                                                                <div class="col-sm-12 col-md-12 col-lg12">
-                                                                    <div>
-                                                                        <span>Loader....</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-12" style="margin-top:-20px;">
-                                                            <div class="row" style="background-color: #191c2d;margin-right: -5px;">
-                                                                <div style="height:50px">
-                                                                    <div style="color: white;position: absolute;padding: 15px;">
-                                                                        <i class="fab fa-windows"></i><i class="fab fa-apple"></i> <i class="fab fa-linux"></i>
-                                                                    </div>
-                                                                    <div class="" style="padding: 10px;position: absolute;right: 10px;">
-                                                                        <input type="button" class="btn btn-sm btn-danger pull-right" value="-80%" />
-                                                                        <button class="btn btn-sm info buy-item-btn" id="item_1" role="button"><span class="item-offer" id="">PKR 1990 </span><span style="margin-left:10px;">PKR 399</span></button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                                    <div class="row" onmouseover="item_deal_hover('item_2');" onmouseleave="item_deal_mouseleave('item_2')" style="cursor:pointer;">
-                                                        <div style="background:;width:100%;margin:20px;margin-left:0px;margin-right:10px; height:300px;">
-                                                            <div style="background-image:url('images/Free-ubuntu-desktop-wallpapers-full-hd-desktop-images-windows-10-backgrounds-colourful-hi-res-computer-wallpapers-cool-artwork-1920x1080.jpg');background-size:cover;height:300px;width:100%;">
-                                                                <div class="col-sm-12 col-md-12 col-lg12">
-                                                                    <div>
-                                                                        <span>Loader....</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-12" style="margin-top:-20px;">
-                                                            <div class="row" style="background-color: #191c2d;margin-right: -5px;">
-                                                                <div style="height:50px">
-                                                                    <div style="color: white;position: absolute;padding: 15px;">
-                                                                        <i class="fab fa-windows"></i><i class="fab fa-apple"></i> <i class="fab fa-linux"></i>
-                                                                    </div>
-                                                                    <div class="" style="padding: 10px;position: absolute;right: 10px;">
-                                                                        <input type="button" class="btn btn-sm btn-danger pull-right" value="-80%" />
-                                                                        <button class="btn btn-sm info buy-item-btn" id="item_2" role="button"><span class="item-offer" id="">PKR 1990 </span><span style="margin-left:10px;">PKR 399</span></button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0">
+                            <div class="col-sm-12">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div style="width:100%;height:100%;border:1px dashed #ffffff;">
+
                                         </div>
                                     </div>
                                 </div>
@@ -272,7 +541,948 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+            <div class="container">
+                <div class="banner-container">
+                    <div class="banner">
+                        <span>HIGHLIGHTS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="item-container ">
+                                    <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                    </div>
+                                    <div class="image-footer">
+                                        <button class="push-to-right buy-now-button buy-now-small">
+                                            BUY NOW
+                                        </button>
+                                        <button class="push-to-right sale-button new-sale-btn" role="button">
+                                            <span class="original-price">$14.99</span><span> $12.69</span>
+                                        </button>
+                                        <button class="push-to-right discount-button discount-button-small">
+                                            -15%
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="item-container ">
+                                    <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                    </div>
+                                    <div class="image-footer">
+                                        <button class="push-to-right buy-now-button buy-now-small">
+                                            BUY NOW
+                                        </button>
+                                        <button class="push-to-right sale-button new-sale-btn" role="button">
+                                            <span class="original-price">$14.99</span><span> $12.69</span>
+                                        </button>
+                                        <button class="push-to-right discount-button discount-button-small">
+                                            -15%
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="image-banner" style="background-image:url(images/autumn_bench-HD-1024x576.jpg);background-size:cover; height: 100px;margin-top: 15px;width:100%;padding:15px;">
+                            <div class="col-sm-9" style="float:left;">
+
+                                <p style="font-size:x-large;font-weight:bolder;margin-bottom:5px;" class="white-text">
+                                    CONNECT TO GAMING ZONE
+                                </p>
+                                <p class="white-text">
+                                    CONNECT YOUR STREAM ACCOUNT AND GROW YOU GAMING LIBERARY
+                                </p>
+                            </div>
+                            <div class="col-sm-2" style="float:right;margin-top:2.5%;">
+                                <button class="btn btn-sm" style="float:right;">
+                                    Click
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="image-banner" style="background-image:url(images/8f92d021f43be04541bbd2a515c66b3d.jpg);background-size:cover; height: 100px;margin-top: 15px;width:100%;padding:15px;">
+                            <div class="col-sm-9" style="float:left;">
+
+                                <p style="font-size:x-large;font-weight:bolder;margin-bottom:5px;" class="white-text">
+                                    CONNECT TO GAMING ZONE
+                                </p>
+                                <p class="white-text">
+                                    CONNECT YOUR STREAM ACCOUNT AND GROW YOU GAMING LIBERARY
+                                </p>
+                            </div>
+                            <div class="col-sm-2" style="float:right;margin-top:2.5%;">
+                                <button class="btn btn-sm" style="float:right;">
+                                    Click
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="banner-container full-width full-menu">
+                            <div class="browse-mwnu-item">
+                                BROWSE DETAILS:
+                            </div>
+                            <div class="banner browse-mwnu-item" onclick="change(this,'div1')">
+                                DON'T MISS
+                            </div>
+                            <div class="browse-mwnu-item" onclick="change(this,'div2')">
+                                ROLEPLAY
+                            </div>
+                            <div class="browse-mwnu-item" onclick="change(this,'div3')">
+                                THINKING
+                            </div>
+                            <div class="browse-mwnu-item" onclick="change(this,'div4')">
+                                ACTION
+                            </div>
+                            <div class="browse-mwnu-item">
+                                ADVENTURE
+                            </div>
+                            <div class="browse-mwnu-item">
+                                ALL DEALS
+                            </div>
+                        </div>
+                        <div class="banner-container full-width half-menu">
+                            <div class="browse-mwnu-item">
+                                BROWSE DETAILS:
+                            </div>
+                            <div class="banner browse-mwnu-item">
+                                DON'T MISS
+                            </div>
+                            <div class="browse-mwnu-item">
+                                ALL DEALS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container menu-items div1">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="item-container ">
+                                    <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                    </div>
+                                    <div class="image-footer">
+                                        <button class="push-to-right buy-now-button buy-now-small">
+                                            BUY NOW
+                                        </button>
+                                        <button class="push-to-right sale-button new-sale-btn" role="button">
+                                            <span class="original-price">$14.99</span><span> $12.69</span>
+                                        </button>
+                                        <button class="push-to-right discount-button discount-button-small">
+                                            -15%
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="item-container ">
+                                    <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                    </div>
+                                    <div class="image-footer">
+                                        <button class="push-to-right buy-now-button buy-now-small">
+                                            BUY NOW
+                                        </button>
+                                        <button class="push-to-right sale-button new-sale-btn" role="button">
+                                            <span class="original-price">$14.99</span><span> $12.69</span>
+                                        </button>
+                                        <button class="push-to-right discount-button discount-button-small">
+                                            -15%
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container menu-items div2">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="large-box">
+                            <div class="item-container ">
+                                <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                </div>
+                                <div class="image-footer">
+                                    <button class="push-to-right buy-now-button">
+                                        BUY NOW
+                                    </button>
+                                    <button class="push-to-right sale-button" role="button">
+                                        <span class="original-price">$14.99</span><span> $12.69</span>
+                                    </button>
+                                    <button class="push-to-right discount-button">
+                                        -15%
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="large-box">
+                            <div class="item-container ">
+                                <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                </div>
+                                <div class="image-footer">
+                                    <button class="push-to-right buy-now-button ">
+                                        BUY NOW
+                                    </button>
+                                    <button class="push-to-right sale-button" role="button">
+                                        <span class="original-price">$14.99</span><span> $12.69</span>
+                                    </button>
+                                    <button class="push-to-right discount-button">
+                                        -15%
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0;">
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div class="item-image" style="background-image:url('Games/11.jpg');">
+
+                                        </div>
+                                        <div class="image-footer">
+                                            <button class="push-to-right buy-now-button buy-now-small">
+                                                BUY NOW
+                                            </button>
+                                            <button class="push-to-right sale-button new-sale-btn" role="button">
+                                                <span class="original-price">$14.99</span><span> $12.69</span>
+                                            </button>
+                                            <button class="push-to-right discount-button discount-button-small">
+                                                -15%
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row" style="margin-top:0">
+                            <div class="col-sm-12">
+                                <div class="small-box">
+                                    <div class="item-container ">
+                                        <div style="width:100%;height:100%;border:1px dashed #ffffff;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container menu-items div3">
+
+            </div>
+            <div class="container menu-items div4">
+
+            </div>
+
+
+
+
         </div>
+        <div class="bottom-main-div" style="background-color:#cccccc;">
+            <div class="container">
+                <div class="col-sm-12">
+                    <div class="row" style="margin-left: -35px;">
+                        <div class="full-width" style="height:400px;">
+                            <div class="" style="padding-top:20px; padding-left:20px; width:75%;height:100%;float:left">
+                                <div class="" style="background-image:url('images/laptop_apple_white_black_open_reflection_33645_1280x720.jpg');width:100%;height:100%;" id="slider">
+
+                                </div>
+                            </div>
+                            <div class="" style="padding-top:20px; padding-left:20px;  width:25%;height:100%;float:left;">
+                                <div class="" style="background-image:url('images/laptop_apple_white_black_open_reflection_33645_1280x720.jpg');width:100%;height:100%;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="col-sm-12">
+                    <div class="row" style="margin-left:-35px;">
+                        <div class="full-width" style="height:250px;">
+                            <div class="" style="padding-top:20px; padding-left:20px; width:20%;height:100%;float:left">
+                                <div class="" style="background-image:url('images/laptop_apple_white_black_open_reflection_33645_1280x720.jpg');width:100%;height:60%;">
+
+                                </div>
+                                <div class="" style="width:100%;height:40%;border:1px solid lightgray;padding:5px;">
+                                    <p>The fall part 2: Unbound</p>
+                                </div>
+                            </div>
+                            <div class="" style="padding-top:20px; padding-left:20px; width:20%;height:100%;float:left">
+                                <div class="" style="background-image:url('images/laptop_apple_white_black_open_reflection_33645_1280x720.jpg');width:100%;height:60%;">
+
+                                </div>
+                                <div class="" style="width:100%;height:40%;border:1px solid lightgray">
+
+                                </div>
+                            </div>
+                            <div class="" style="padding-top:20px; padding-left:20px; width:20%;height:100%;float:left">
+                                <div class="" style="background-image:url('images/laptop_apple_white_black_open_reflection_33645_1280x720.jpg');width:100%;height:60%;">
+
+                                </div>
+                                <div class="" style="width:100%;height:40%;border:1px solid lightgray">
+
+                                </div>
+                            </div>
+                            <div class="" style="padding-top:20px; padding-left:20px; width:20%;height:100%;float:left">
+                                <div class="" style="background-image:url('images/laptop_apple_white_black_open_reflection_33645_1280x720.jpg');width:100%;height:60%;">
+
+                                </div>
+                                <div class="" style="width:100%;height:40%;border:1px solid lightgray">
+
+                                </div>
+                            </div>
+                            <div class="" style="padding-top:20px; padding-left:20px; width:20%;height:100%;float:left">
+                                <div class="" style="background-image:url('images/laptop_apple_white_black_open_reflection_33645_1280x720.jpg');width:100%;height:60%;">
+
+                                </div>
+                                <div class="" style="width:100%;height:40%;border:1px solid lightgray">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>HEADLINES</p>
+                        <div class="news-item-container">
+                            <div class="news-item" style="">
+                                <div class="news-image" style="background-image:url(Games/10.jpg)">
+                                </div>
+                                <div class="news">
+                                    <h6>
+                                        The Chinese New Year Sale Continues:
+                                        <b>Dungeons II goes FREE</b>
+                                    </h6>
+                                    <time datetime="2018-02-16T16:00">2 days ago</time> - 112 commints
+                                    <p style="overflow:hidden;">
+                                        48h Giveaway • Final Flash Deals • Hundreds Of Deals Up To -90%Feeling like a modern take on Dungeon Keeper? We've got you. Grab a free copy of Kalypso's Dungeons II on GOG.com – the DRM-free dispensary of joy and prosperity. Our Chinese New Year Sale is nearing its end, but not without a bang! If not for the hundreds of offers and Flash Deals, if
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item-container">
+                            <div class="news-item" style="">
+                                <div class="news-image" style="background-image:url(Games/9.jpg)">
+                                </div>
+                                <div class="news">
+                                    <h6>
+                                        The Chinese New Year Sale Continues:
+                                        <b>Dungeons II goes FREE</b>
+                                    </h6>
+                                    <time datetime="2018-02-16T16:00">2 days ago</time> - 112 commints
+                                    <p style="overflow:hidden;">
+                                        48h Giveaway • Final Flash Deals • Hundreds Of Deals Up To -90%Feeling like a modern take on Dungeon Keeper? We've got you. Grab a free copy of Kalypso's Dungeons II on GOG.com – the DRM-free dispensary of joy and prosperity. Our Chinese New Year Sale is nearing its end, but not without a bang! If not for the hundreds of offers and Flash Deals, if
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item-container">
+                            <div class="news-item" style="">
+                                <div class="news-image" style="background-image:url(Games/7.jpg)">
+                                </div>
+                                <div class="news">
+                                    <h6>
+                                        The Chinese New Year Sale Continues:
+                                        <b>Dungeons II goes FREE</b>
+                                    </h6>
+                                    <time datetime="2018-02-16T16:00">2 days ago</time> - 112 commints
+                                    <p style="overflow:hidden;">
+                                        48h Giveaway • Final Flash Deals • Hundreds Of Deals Up To -90%Feeling like a modern take on Dungeon Keeper? We've got you. Grab a free copy of Kalypso's Dungeons II on GOG.com – the DRM-free dispensary of joy and prosperity. Our Chinese New Year Sale is nearing its end, but not without a bang! If not for the hundreds of offers and Flash Deals, if
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item-container">
+                            <div class="news-item" style="">
+                                <div class="news-image" style="background-image:url(Games/5.jpg)">
+                                </div>
+                                <div class="news">
+                                    <h6>
+                                        The Chinese New Year Sale Continues:
+                                        <b>Dungeons II goes FREE</b>
+                                    </h6>
+                                    <time datetime="2018-02-16T16:00">2 days ago</time> - 112 commints
+                                    <p style="overflow:hidden;">
+                                        48h Giveaway • Final Flash Deals • Hundreds Of Deals Up To -90%Feeling like a modern take on Dungeon Keeper? We've got you. Grab a free copy of Kalypso's Dungeons II on GOG.com – the DRM-free dispensary of joy and prosperity. Our Chinese New Year Sale is nearing its end, but not without a bang! If not for the hundreds of offers and Flash Deals, if
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item-container">
+                            <div class="news-item" style="">
+                                <div class="news-image" style="background-image:url(Games/4.jpg)">
+                                </div>
+                                <div class="news">
+                                    <h6>
+                                        The Chinese New Year Sale Continues:
+                                        <b>Dungeons II goes FREE</b>
+                                    </h6>
+                                    <time datetime="2018-02-16T16:00">2 days ago</time> - 112 commints
+                                    <p style="overflow:hidden;">
+                                        48h Giveaway • Final Flash Deals • Hundreds Of Deals Up To -90%Feeling like a modern take on Dungeon Keeper? We've got you. Grab a free copy of Kalypso's Dungeons II on GOG.com – the DRM-free dispensary of joy and prosperity. Our Chinese New Year Sale is nearing its end, but not without a bang! If not for the hundreds of offers and Flash Deals, if
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item-container">
+                            <div class="news-item" style="">
+                                <div class="news-image" style="background-image:url(Games/11.jpg)">
+                                </div>
+                                <div class="news">
+                                    <h6>
+                                        The Chinese New Year Sale Continues:
+                                        <b>Dungeons II goes FREE</b>
+                                    </h6>
+                                    <time datetime="2018-02-16T16:00">2 days ago</time> - 112 commints
+                                    <p style="overflow:hidden;">
+                                        48h Giveaway • Final Flash Deals • Hundreds Of Deals Up To -90%Feeling like a modern take on Dungeon Keeper? We've got you. Grab a free copy of Kalypso's Dungeons II on GOG.com – the DRM-free dispensary of joy and prosperity. Our Chinese New Year Sale is nearing its end, but not without a bang! If not for the hundreds of offers and Flash Deals, if
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:100%;background-color:darkgray;">
+                            <div style="padding:15px; text-align:center;">
+                                <span>MORE NEWS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <p>HEADLINES</p>
+                        <div class="news-item-container">
+                            <div class="news-item" style="">
+                                <div class="news-image" style="background-image:url(Games/10.jpg)">
+                                </div>
+                                <div class="news">
+                                    <h6>
+                                        The Chinese New Year Sale Continues:
+                                        <b>Dungeons II goes FREE</b>
+                                    </h6>
+                                    <time datetime="2018-02-16T16:00">2 days ago</time> - 112 commints
+                                    <p style="overflow:hidden;">
+                                        48h Giveaway • Final Flash Deals • Hundreds Of Deals Up To -90%Feeling like a modern take on Dungeon Keeper? We've got you. Grab a free copy of Kalypso's Dungeons II on GOG.com – the DRM-free dispensary of joy and prosperity. Our Chinese New Year Sale is nearing its end, but not without a bang! If not for the hundreds of offers and Flash Deals, if
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item-container">
+                            <div class="news-item" style="">
+                                <div class="news-image" style="background-image:url(Games/9.jpg)">
+                                </div>
+                                <div class="news">
+                                    <h6>
+                                        The Chinese New Year Sale Continues:
+                                        <b>Dungeons II goes FREE</b>
+                                    </h6>
+                                    <time datetime="2018-02-16T16:00">2 days ago</time> - 112 commints
+                                    <p style="overflow:hidden;">
+                                        48h Giveaway • Final Flash Deals • Hundreds Of Deals Up To -90%Feeling like a modern take on Dungeon Keeper? We've got you. Grab a free copy of Kalypso's Dungeons II on GOG.com – the DRM-free dispensary of joy and prosperity. Our Chinese New Year Sale is nearing its end, but not without a bang! If not for the hundreds of offers and Flash Deals, if
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item-container">
+                            <div class="news-item" style="">
+                                <div class="news-image" style="background-image:url(Games/7.jpg)">
+                                </div>
+                                <div class="news">
+                                    <h6>
+                                        The Chinese New Year Sale Continues:
+                                        <b>Dungeons II goes FREE</b>
+                                    </h6>
+                                    <time datetime="2018-02-16T16:00">2 days ago</time> - 112 commints
+                                    <p style="overflow:hidden;">
+                                        48h Giveaway • Final Flash Deals • Hundreds Of Deals Up To -90%Feeling like a modern take on Dungeon Keeper? We've got you. Grab a free copy of Kalypso's Dungeons II on GOG.com – the DRM-free dispensary of joy and prosperity. Our Chinese New Year Sale is nearing its end, but not without a bang! If not for the hundreds of offers and Flash Deals, if
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item-container">
+                            <div class="news-item" style="">
+                                <div class="news-image" style="background-image:url(Games/5.jpg)">
+                                </div>
+                                <div class="news">
+                                    <h6>
+                                        The Chinese New Year Sale Continues:
+                                        <b>Dungeons II goes FREE</b>
+                                    </h6>
+                                    <time datetime="2018-02-16T16:00">2 days ago</time> - 112 commints
+                                    <p style="overflow:hidden;">
+                                        48h Giveaway • Final Flash Deals • Hundreds Of Deals Up To -90%Feeling like a modern take on Dungeon Keeper? We've got you. Grab a free copy of Kalypso's Dungeons II on GOG.com – the DRM-free dispensary of joy and prosperity. Our Chinese New Year Sale is nearing its end, but not without a bang! If not for the hundreds of offers and Flash Deals, if
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item-container">
+                            <div class="news-item" style="">
+                                <div class="news-image" style="background-image:url(Games/4.jpg)">
+                                </div>
+                                <div class="news">
+                                    <h6>
+                                        The Chinese New Year Sale Continues:
+                                        <b>Dungeons II goes FREE</b>
+                                    </h6>
+                                    <time datetime="2018-02-16T16:00">2 days ago</time> - 112 commints
+                                    <p style="overflow:hidden;">
+                                        48h Giveaway • Final Flash Deals • Hundreds Of Deals Up To -90%Feeling like a modern take on Dungeon Keeper? We've got you. Grab a free copy of Kalypso's Dungeons II on GOG.com – the DRM-free dispensary of joy and prosperity. Our Chinese New Year Sale is nearing its end, but not without a bang! If not for the hundreds of offers and Flash Deals, if
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item-container">
+                            <div class="news-item" style="">
+                                <div class="news-image" style="background-image:url(Games/11.jpg)">
+                                </div>
+                                <div class="news">
+                                    <h6>
+                                        The Chinese New Year Sale Continues:
+                                        <b>Dungeons II goes FREE</b>
+                                    </h6>
+                                    <time datetime="2018-02-16T16:00">2 days ago</time> - 112 commints
+                                    <p style="overflow:hidden;">
+                                        48h Giveaway • Final Flash Deals • Hundreds Of Deals Up To -90%Feeling like a modern take on Dungeon Keeper? We've got you. Grab a free copy of Kalypso's Dungeons II on GOG.com – the DRM-free dispensary of joy and prosperity. Our Chinese New Year Sale is nearing its end, but not without a bang! If not for the hundreds of offers and Flash Deals, if
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:100%;background-color:darkgray;">
+                            <div style="padding:15px; text-align:center;">
+                                <span>MORE NEWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <footer style="margin-top:50px;"></footer>
     </div>
 </body>
 </html>

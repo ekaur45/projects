@@ -77,6 +77,25 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <None Include="packages.config" />
+    <Content Include="Games\2.jpg" />
+    <Content Include="Games\3.jpg" />
+    <Content Include="Games\4.jpg" />
+    <Content Include="Games\5.jpg" />
+    <Content Include="Games\6.jpg" />
+    <Content Include="Games\7.jpg" />
+    <Content Include="Games\8.jpg" />
+    <Content Include="Games\9.jpg" />
+    <Content Include="Games\10.jpg" />
+    <Content Include="Games\11.jpg" />
+    <Content Include="Games\13.jpg" />
+    <Content Include="Games\14.jpg" />
+    <Content Include="Games\15.jpg" />
+    <Content Include="Games\16.jpg" />
+    <Content Include="Games\1.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="images\autumn_bench-HD-1024x576.jpg" />
+    <Content Include="images\left-arrow-right-hi.png" />
+    <Content Include="notepad.html" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <None Include="Web.Debug.config">
@@ -128,7 +147,7 @@
     <Content Include="fonts\webfonts\fa-brands-400.svg" />
     <Content Include="fonts\webfonts\fa-regular-400.svg" />
     <Content Include="fonts\webfonts\fa-solid-900.svg" />
-    <Content Include="favicon.ico" />
+    <Content Include="notfavicon.ico" />
     <Content Include="images\0a83791ea526031ba58868e6a51903be.jpg" />
     <Content Include="images\8f92d021f43be04541bbd2a515c66b3d.jpg" />
     <Content Include="images\background-image.jpg" />
@@ -237,6 +256,7 @@
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\site.js" />
+    <Content Include="test.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
