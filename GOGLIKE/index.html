@@ -19,6 +19,19 @@
         }*/
     </style>
     <style>
+        @media(max-width:850px){
+            .container{
+                max-width:100%;
+                width:100%;
+            }
+
+        }
+        @media(max-width:1100px) and (min-width:850px) {
+            .container {
+                max-width: 96%;
+                width: 96%;
+            }
+        }
         .row {
             margin-top: -20px;
         }
@@ -225,28 +238,33 @@
         .menu-items {
             display: none;
         }
-        .news-item {            
+
+        .news-item {
             width: 100%;
             height: 100%;
         }
+
         .news-item-container {
             width: 100%;
             height: 150px;
             cursor: pointer;
             background-color: #c3c3c3;
-            margin-bottom:1px;
+            margin-bottom: 1px;
         }
+
             .news-item-container:hover {
                 opacity: 0.80;
                 background-color: #dcdcdc;
             }
+
         .news-image {
             width: 35%;
             height: 100%;
             float: left;
-            background-size:cover;
-            background-repeat:no-repeat;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
+
         .news {
             width: 65%;
             height: 100%;
@@ -256,6 +274,148 @@
             padding-bottom: 20px;
             padding-left: 15px;
             padding-right: 15px;
+        }
+
+        footer {
+            width: 100%;
+            height: auto;
+            background-color: #565656;
+            margin-top: 50px;
+        }
+
+            footer .row {
+                margin-top: 0;
+                margin-left:15px;
+                margin-right:15px;
+            }
+
+        .links {
+            width: 100%;
+            height: auto;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+
+        .left-link {
+            float: left;
+        }
+
+            .left-link > div {
+                float: left;
+                margin-right: 15px;
+                cursor: pointer;
+            }
+
+                .left-link > div > p:hover {
+                    color: lightgray;
+                }
+
+                .left-link > div > p {
+                    margin-bottom: 0;
+                    color: gray;
+                }
+
+        .right-link {
+            padding-left: 35px;
+            width: auto;
+            float: right;
+        }
+
+        .social-links {
+            width: auto;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .social-button {
+            margin-right: 15px;
+            /* padding: 5px; */
+            border: 1px solid #424242;
+            background-color: #424242;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            color: darkgray;
+            cursor: pointer;
+            box-shadow: 1px 1px 9px 0px #000000;
+            width: 150px;
+        }
+
+            .social-button:hover {
+                box-shadow: 1px 1px 9px 0px #000000 inset;
+            }
+
+        @media (max-width:400px) {
+            .links {
+                width: 100%;
+                float: none;
+            }
+
+            .left-link {
+                float: none;
+                text-align: center;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .right-link {
+                float: left;
+                text-align: center;
+                width: 100%;
+                padding-left: 0;
+            }
+        }
+
+        @media(max-width:381px) {
+            .social-links {
+                text-align: center;
+            }
+
+            .social-button {
+                margin-bottom: 15px;
+            }
+
+        }
+
+        @media (max-width:991px) and (min-width:381px) {
+            .social-button {
+                margin-bottom: 15px;
+            }
+
+            .right-link {
+                width: auto;
+                padding-top: 35px;
+                float: none;
+                padding-left: 0;
+            }
+            .right-link select {
+                margin-left:15px;
+            }
+            .left-link {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        @media(max-width:550px) {
+            .right-link {
+                clear: both;
+            }
+        }
+
+        @media(max-width:500px)and ( min-width:381px) {
+            .social-links {
+                text-align: left;
+            }
+
+            .right-link {
+                text-align: left;
+            }
+
+                .right-link span {
+                    float: left;
+                }
         }
     </style>
 </head>
@@ -1482,8 +1642,79 @@
 
 
         </div>
-        <footer style="margin-top:50px;"></footer>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="links">
+                        <div class="left-link" style="width:auto;float:left;">
+                            <div>
+                                <p>REDEEM CODE</p>
+                            </div>
+                            <div>
+                                <p>RECLAIM YOUR GAME</p>
+                            </div>
+                            <div>
+                                <p>CONTACT US</p>
+                            </div>
+                            <div>
+                                <p>CAREERS</p>
+                            </div>
+                        </div>
+                        <div class="right-link">
+                            <div>
+                                <span>Select Language: </span>
+                                <select class="social-button">
+                                    <option>ENGLISH (US)</option>
+                                    <option>ENGLISH (UK)</option>
+                                    <option>URDU </option>
+                                    <option>ARABIC</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="nav-links">
+                        <div style="width:50%;">
+                            
+                        </div>
+                        <div style="width:50%">
+                            
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <button class="social-button">
+                            <i class="fab fa-facebook" style="color:darkblue;"></i> FACEBOOK
+                        </button>
+                        <button class="social-button">
+                            <i class="fab fa-twitter" style="color:lightskyblue;"></i> TWITTER
+                        </button>
+                        <button class="social-button">
+                            <i class="fab fa-linkedin" style="color:#0077b5;"></i> LINKEDIN
+                        </button>
+                        <button class="social-button">
+                            <i class="fab fa-youtube" style="color:darkred;"></i> YOUTUBE
+                        </button>
+
+                        <button class="social-button">
+                            <i class="fab fa-google-plus-g" style="color:forestgreen;"></i> GOOGLE+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
+    <style>
+        select:focus{
+            outline:none;
+        }
+        button:focus {
+            outline: 1px solid gray;
+            box-shadow: 0px 15px 20px 0px #000000 inset;
+        }
+        .nav-links{
+            width:100%;
+        }
+    </style>
 </body>
 </html>
 <script src="Scripts/site.js"></script>
