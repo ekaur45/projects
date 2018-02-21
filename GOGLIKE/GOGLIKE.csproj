@@ -98,6 +98,7 @@
     <Content Include="images\autumn_bench-HD-1024x576.jpg" />
     <Content Include="images\download.png" />
     <Content Include="images\icon_section1-header.png" />
+    <Content Include="images\icon_section2-header.png" />
     <Content Include="images\left-arrow-right-hi.png" />
     <Content Include="notepad.html" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
