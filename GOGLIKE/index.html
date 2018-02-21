@@ -417,6 +417,22 @@
                     float: left;
                 }
         }
+        .search-btn {
+            margin-right: 15px;
+            border: 1px solid #424242;
+            background-color: #424242;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            color: darkgray;
+            cursor: pointer;
+            box-shadow: 1px 1px 9px 0px #000000;
+            height: 38px;
+        }
+        .search-btn:hover {
+            box-shadow: 1px 1px 9px 0px #000000 inset;
+        }
     </style>
 </head>
 <body>
@@ -426,62 +442,86 @@
 
             </div>
             <div class="container">
-                <nav>
-                    <ul class="menu">
-                        <li>
-                            <a href="#">
-                                Home
+                <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded bg-inverse" style="background-color: #000000b8 !important;height: 100%;padding-top: 10px;padding-bottom: 15px;">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Navbar</a>
 
-                            </a>
-                            <span class="triangle"></span>
-                            <ul class="submenu" id="submenu1">
-
-                                <li>
-                                    <a href="#" style="color:rgb(0, 170, 187)">
-                                        <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
-
-                                        <span>
-                                            Pillars of Eternity II: DeadFire
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
-                                        About
-                                    </a>
-                                </li>
-                                <li class="menu-divider"></li>
-                                <li class="disabled">
-                                    <a href="#">
-                                        <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
-                                        About
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                About
-                            </a>
-                            <ul class="submenu" id="submenu2">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
-                                        Home
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
-                                        About
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about.html">about</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">Disabled</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                            <button class="btn my-2 my-sm-0 search-btn" type="submit">Search</button>
+                        </form>
+                    </div>
                 </nav>
+                <!--<nav>
+        <ul class="menu">
+            <li>
+                <a href="#">
+                    Home
+
+                </a>
+                <span class="triangle"></span>
+                <ul class="submenu" id="submenu1">
+
+                    <li>
+                        <a href="#" style="color:rgb(0, 170, 187)">
+                            <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
+
+                            <span>
+                                Pillars of Eternity II: DeadFire
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
+                            About
+                        </a>
+                    </li>
+                    <li class="menu-divider"></li>
+                    <li class="disabled">
+                        <a href="#">
+                            <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    About
+                </a>
+                <ul class="submenu" id="submenu2">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
+                            Home
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-caret-right fa-pull-right" style="margin-top:3px;"></i>
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>-->
             </div>
         </header>
         <div class="top-main-div">

@@ -3,14 +3,14 @@ function slider() {
     if (x >= 10)
         x = 1;
     //$("#slider").fadeOut(800);
-    
-    $('#slider').fadeTo(900, function () {
-        $(this).css({ "background-image": "url('games/" + x + ".jpg')" }).fadeIn(900);
+
+    $('#slider').fadeOut(900, function () {
+        $(this).css({ "background-image": "url('Games/" + x + ".jpg')" }).fadeIn(900);
     });
     x++;
     setTimeout(function () {
         slider();
-    }, 8000);
+    }, 6000);
 }
 $(document).ready(function () {
     slider();
